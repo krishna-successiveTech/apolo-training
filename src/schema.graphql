@@ -1,0 +1,8 @@
+type Query {
+    getTrainee(skip: Int, limit: Int, sort: Int): AllTraineGet
+    me: GetMe
+}
+
+schema {
+  query: Query
+}

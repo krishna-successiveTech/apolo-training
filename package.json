@@ -1,0 +1,35 @@
+{
+  "name": "apolo-training",
+  "version": "1.0.0",
+  "description": "GraphQL GraphQL is an open source server-side technology which was developed by Facebook to optimize RESTful API calls. GraphQL structures data in the form of a graph with its powerful query syntax for traversing, retrieving, and modifying data. GraphQL APIs fetch all the data your application need in a single request.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishna-successiveTech/apolo-training.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krishna-successiveTech/apolo-training/issues"
+  },
+  "homepage": "https://github.com/krishna-successiveTech/apolo-training#readme",
+  "dependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "apollo-datasource-rest": "^0.6.4",
+    "apollo-server-express": "^2.9.4",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "merge-graphql-schemas": "^1.7.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
