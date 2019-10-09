@@ -3,26 +3,19 @@ import {
   gql
 } from 'apollo-server-express';
 import express from 'express';
+import { deftype, resolver } from './module';
+
 
 const app = express();
-const typeDefs = gql `
-  type Book {
-    title: String
-    author: String
+
+
+const apolloServer = new ApolloServer({ 
+  typeDefs: deftype,
+  resolvers: resolver,
+  context: ({ req}) => {
+      token: req.headers.authorization;
   }
-
-  type Query {
-    books: [Book]
-  }
-`;
-
-const resolvers = {
-  Query: {
-    books: () => books,
-  },
-};
-
-const apolloServer = new ApolloServer({ typeDefs, resolvers });
+,});
 
 export default class server {
     constructor(configuration) {
@@ -37,14 +30,3 @@ export default class server {
 });
     }
 }
-
-
-const books = [{
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
